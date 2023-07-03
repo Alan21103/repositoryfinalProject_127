@@ -1,20 +1,72 @@
-// UAS_pemdas.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+class MataKuliah {
+private:
+	float presensi;
+	float activity;
+	float exercise;
+	float tugasAkhir;
+
+public:
+	MataKuliah() {
+		presensi = 0;
+		activity = 0;
+		exercise = 0;
+		tugasAkhir = 0;
+	}
+
+	virtual float hitungNilaiAkhir() { return 0; }
+	virtual void cekKelulusan() { return 0; }
+	virtual void input() { return 0; }
+
+	void setPresensi(float nilai) {
+		this->presensi = nilai;
+	}
+
+	float getPresensi() {
+		return presensi;
+	}
+
+	void setActivity(float nilai) {
+		this->activity = nilai;
+	}
+
+	float getActivity() {
+		return activity;
+	}
+
+	void setExercise(float nilai) {
+		this->exercise = nilai;
+	}
+
+	float getExercise() {
+		return exercise;
+	}
+
+	void setTugasAkhir(float nilai) {
+		this->tugasAkhir = nilai;
+	}
+
+	float getTugasAkhir() {
+		return tugasAkhir;
+	}
+
+};
+
+class Pemograman : public MataKuliah {
+public:
+	virtual void cekKelulusan() {
+		cout << "Selamat, Anda lulus mata kuliah Pemograman dengan nilai akhir 75";
+	}
+};
+
+int main() {
+	MataKuliah(){
+
+		cout << "Program dibuat\n";
+		cout << "Masukkan nilai presensi: ";
+		int presensi;
+		cin >> presensi;
+	}
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
