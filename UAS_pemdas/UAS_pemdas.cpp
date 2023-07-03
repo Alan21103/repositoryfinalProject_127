@@ -56,7 +56,7 @@ public:
 
 class Pemograman : public MataKuliah {
 public:
-	virtual void cekKelulusan() {
+	 void cekKelulusan() {
 		cout << "Selamat, Anda lulus mata kuliah Pemograman dengan nilai akhir 75";
 	}
 };
@@ -68,5 +68,11 @@ int main() {
 		cout << "Masukkan nilai presensi: ";
 		int presensi;
 		cin >> presensi;
+
+		cout << "Masukkan nilai activity: ";
+		int activity;
+		cin >> activity;
+
+
 	}
 }
